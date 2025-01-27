@@ -13,16 +13,14 @@ def get_db_connection():
     )
     return connection
 
-# Insert product into the database
 def insert_product(name, amount, img_binary, group):
     connection = get_db_connection()
     cursor = connection.cursor()
-    query = "INSERT INTO products (name, amount, img, group) VALUES (%s, %s, %s, %s)"
+    query = "INSERT INTO products (name, amount, img, `group`) VALUES (%s, %s, %s, %s)"
     cursor.execute(query, (name, amount, img_binary, group))
     connection.commit()
     cursor.close()
     connection.close()
-
 # Streamlit app
 st.title("Product Registration")
 
