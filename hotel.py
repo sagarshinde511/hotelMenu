@@ -28,7 +28,7 @@ st.title("Product Registration")
 product_name = st.text_input("Product Name")
 product_amount = st.number_input("Amount", min_value=0.0, format="%.2f")
 product_image = st.file_uploader("Upload Product Image", type=["jpg", "jpeg", "png"])
-product_group = st.selectbox("Select Group", ["a", "b", "c", "d", "e"])
+product_group = st.selectbox("Select Group", ["VegStarter","VegStarter", "VegMainCource", "NonVegMainCource", "Roti", "Rice", "Beverage"])
 
 if st.button("Register Product"):
     if not product_name:
