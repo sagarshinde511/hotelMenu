@@ -123,7 +123,7 @@ def dashboard():
 
 if st.session_state.authenticated:
     if st.session_state.user_group == "admin":
-        RegisterProduct()
+        login()
     else:
         dashboard()
 else:
