@@ -95,13 +95,13 @@ def login():
         if username == "admin" and password == "admin":
             st.session_state.authenticated = True
             st.session_state.user_group = "admin"
-            st.experimental_rerun()
+            st.rerun()
         else:
             user_group = authenticate_user(username, password)
             if user_group:
                 st.session_state.authenticated = True
                 st.session_state.user_group = user_group
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Invalid username or password.")
 
@@ -117,7 +117,7 @@ def dashboard():
         selected_status = st.selectbox("Update Order Status", status_options)
         if st.button("Update Status"):
             update_order_status(selected_table, selected_status)
-            st.experimental_rerun()
+            st.rerun()
     else:
         st.write("No orders found for your group.")
 
